@@ -113,7 +113,6 @@ validation_data = (np.expand_dims(x_test_scaled, axis=0),
 
 model = Sequential()
 model.add(LSTM (4,input_shape=(None, num_input_signals,),return_sequences=True))
-#model.add(LSTM(4, batch_input_shape=(256, x_train_scaled.shape, x_train_scaled.shape), stateful=True))
 model.add(Dense(2))
    
 model.add(Dense(num_label_signals, activation='sigmoid'))
@@ -124,10 +123,6 @@ if False:
                     activation='linear',
                     kernel_initializer=init))
 optimizer = RMSprop(lr=1e-5)
-#model.compile(optimizer='rmsprop',
-#              loss='mse')
-#model.compile(loss=loss_mse_warmup, optimizer=optimizer)
-
 model.compile(loss='mean_squared_error', optimizer='adam')
 
 model.summary()
@@ -145,8 +140,6 @@ callback_early_stopping = EarlyStopping(monitor='val_loss',
 callback_tensorboard = TensorBoard(log_dir='./2hedi_logs/',
                                    histogram_freq=0,
                                   write_graph=True)
-        
-#callbacks.TensorBoard(log_dir='./2hedi_logs/', histogram_freq=0,write_graph=True, write_images=True)
 
 callback_reduce_lr = ReduceLROnPlateau(monitor='val_loss',
                                        factor=0.1,
