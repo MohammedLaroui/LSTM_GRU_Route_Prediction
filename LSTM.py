@@ -10,8 +10,8 @@ from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.optimizers import RMSprop
 from tensorflow.python.keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau
 
-X = read_csv('Training_25jours_st.csv',usecols=[2],engine='python')
-Y = read_csv('Training_25jours_st.csv',usecols=[3],engine='python')
+X = read_csv('Data.csv',usecols=[2],engine='python')
+Y = read_csv('Data.csv',usecols=[3],engine='python')
 
 X=np.array(X)
 X_Data=X.reshape(-1,1) 
@@ -71,20 +71,13 @@ print("Max y:", np.max(y_train_scaled),np.max(y_train))
 
 def batch_generator(batch_size, sequence_length):
 
-    Generator function for creating random batches of training-data.
 
     while True:
-        # Allocate a new array for the batch of input-signals.
         x_shape = (batch_size, sequence_length, num_input_signals)
         x_batch = np.zeros(shape=x_shape, dtype=np.float16)
 
-        # Allocate a new array for the batch of output-signals.
         y_shape = (batch_size, sequence_length, num_label_signals)
-        #print("tr",y_shape)
-        y_batch = np.zeros(shape=y_shape, dtype=np.float16)
-        # Fill the batch with random sequences of data.
-
-       
+        y_batch = np.zeros(shape=y_shape, dtype=np.float16)       
 
         for i in range(batch_size):
             idx = int((random.randint(1,5519))*20)
