@@ -21,8 +21,8 @@ Y_Data=Y.reshape(-1,1)
 
 df=np.stack((X_Data,Y_Data),axis=1)
 
-shift_days = 2
-shift_steps = shift_days *4
+shift_days = # add shift
+shift_steps = shift_days * #add shift step
 
 df_targets = np.roll(df,-shift_steps)
 
@@ -46,7 +46,7 @@ y_test = y_data[num_train:]
 #len(y_train) + len(y_test)
 num_input_signals = x_data[0].size
 print("x number of inputs ",num_input_signals,"len test y",len(y_test))
-num_label_signals = y_data.shape[1] #ici probleme
+num_label_signals = y_data.shape[1] 
 print("num label y",num_label_signals)
 print("Min:", np.min(x_train))
 print("Max:", np.max(x_train))
