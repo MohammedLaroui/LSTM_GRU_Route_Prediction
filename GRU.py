@@ -147,7 +147,7 @@ callbacks = [callback_early_stopping,
 
 
 model.fit_generator(generator=generator,
-                    epochs=4,
-                    steps_per_epoch=3000,
+                    epochs= # add epochs,
+                    steps_per_epoch= # add steps per epoch,
                     validation_data=validation_data,
                     callbacks=callbacks)
