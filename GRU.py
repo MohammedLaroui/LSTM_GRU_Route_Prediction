@@ -101,7 +101,7 @@ validation_data = (np.expand_dims(x_test_scaled, axis=0),
 
 model = Sequential()
 
-model.add(GRU(units= 4,#was 512,
+model.add(GRU(units= 4,
              return_sequences=True,
              input_shape=(None, num_input_signals,)))
 model.add(Dense(2))
