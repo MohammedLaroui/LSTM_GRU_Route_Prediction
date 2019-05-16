@@ -106,7 +106,7 @@ validation_data = (np.expand_dims(x_test_scaled, axis=0),
 
 model = Sequential()
 model.add(LSTM (4,input_shape=(None, num_input_signals,),return_sequences=True))
-model.add(Dense(2))
+model.add(Dense(# add the number of dense layer))
    
 model.add(Dense(num_label_signals, activation='sigmoid'))
 if False:
