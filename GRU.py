@@ -56,7 +56,7 @@ y_scaler = MinMaxScaler()
 
 x_train_scaled = x_scaler.fit_transform(x_train.reshape(-1, 2))
 x_test_scaled = x_scaler.transform(x_test.reshape(-1, 2))
-y_train_scaled = y_scaler.fit_transform(y_train.reshape(-1, 2))#ici probleme
+y_train_scaled = y_scaler.fit_transform(y_train.reshape(-1, 2))
 y_test_scaled = y_scaler.transform(y_test.reshape(-1, 2))
 
 print("num_label_signals" ,num_label_signals)
