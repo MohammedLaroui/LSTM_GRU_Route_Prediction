@@ -104,7 +104,7 @@ model = Sequential()
 model.add(GRU(units= 4,
              return_sequences=True,
              input_shape=(None, num_input_signals,)))
-model.add(Dense(2))
+model.add(Dense(# add the number of dense layer))
 model.add(Dense(num_label_signals, activation='sigmoid'))
 if False:
     from tensorflow.python.keras.initializers import RandomUniform
